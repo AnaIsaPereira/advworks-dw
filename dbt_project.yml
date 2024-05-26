@@ -35,8 +35,10 @@ models:
   advworks_dw:
     materialized: table
     staging:
-      +materialized: view
+      +materialized: table
       +schema: staging
+    final:
+      +materialised: table
 
 seeds:
   +schema: staging

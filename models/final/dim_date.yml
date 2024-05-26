@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: Date dimension table
+    columns:
+      - name: sk_date
+        description: "A unique identifier for this record in the table"
+        tests:
+          - unique
+          - not_null
+      - name: date
+        description: "Complete date"
+      - name: day_of_month
+        description: "Day of the month"
+      - name: month_name
+        description: "The name of the month"
+      - name: year
+        description: "Year"
+      - name: day_name
+        description: "The name of the day"
+      - name: is_holiday
+        description: "Returns True if it is a holiday day or False if it is not"
+      - name: quarter
+        description: "The number of the quarter"

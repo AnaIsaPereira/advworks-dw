@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_purchaseorderheader
+    description: >
+      Dimension table for the shippings. Each record represents the state of
+      an vendor between the dates `valid_from` and `valid_to`.
+    columns:
+      - name: sk_purchase_order
+        description: "A unique identifier for this record in the table"
+        tests:
+          - unique
+          - not_null
+      - name: purchase_order_id
+        description: "A unique identifier for the purchase order"
+      - name: revision_number
+        description: "The order's revision number"
+      - name: status
+        description: "The status of the order"
+      - name: order_date
+        description: "The order date"
+      - name: ship_date
+        description: "The ship date"
+      - name: sub_total
+        description: "The sub total of the order"
+      - name: taxa_mt
+        description: "The total amount of the tax applied"
+      - name: ship_cost
+        description: "The cost of the ship"
+      - name: valid_from
+        description: "This record is valid since this datetime."
+      - name: valid_to
+        description: "This record is valid until this datetime."
+      - name: last_updated_at
+        description: "Timestamp of the last update to this record."

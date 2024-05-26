@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_employee
+    description: >
+      Dimension table for the employes. Each record represents the state of
+      an employee between the dates `valid_from` and `valid_to`.
+    columns:
+      - name: sk_employee
+        description: "A unique identifier for this record in the table"
+        tests:
+          - unique
+          - not_null
+      - name: employee_id
+        description: "A unique identifier for the employee"
+      - name: job_title
+        description: "The job title of the employee"
+      - name: first_name
+        description: "The first name of the employee"
+      - name: last_name
+        description: "The last name of the employee"
+      - name: valid_from
+        description: "This record is valid since this datetime."
+      - name: valid_to
+        description: "This record is valid until this datetime."
+      - name: last_updated_at
+        description: "Timestamp of the last update to this record."

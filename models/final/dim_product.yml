@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: >
+      Dimension table for the products. Each record represents the state of
+      a product between the dates `valid_from` and `valid_to`.
+    columns:
+      - name: sk_product
+        description: "A unique identifier for this record in the table"
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "A unique identifier for the product"
+      - name: product_name
+        description: "The name of the product"
+      - name: product_number
+        description: "The number of the product"
+      - name: category_name
+        description: "The category's name of the product"
+      - name: subcategory_name
+        description: "The subcategory's name of the product"
+      - name: valid_from
+        description: "This record is valid since this datetime."
+      - name: valid_to
+        description: "This record is valid until this datetime."
+      - name: last_updated_at
+        description: "Timestamp of the last update to this record."

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_shipping
+    description: >
+      Dimension table for the shippings. Each record represents the state of
+      an shipping between the dates `valid_from` and `valid_to`.
+    columns:
+      - name: sk_shipping
+        description: "A unique identifier for this record in the table"
+        tests:
+          - unique
+          - not_null
+      - name: ship_method_id
+        description: "A unique identifier for the shipping"
+      - name: ship_method_name
+        description: "The name of the shipping"
+      - name: ship_base
+        description: "The base valour for shipping"
+      - name: ship_rate
+        description: "The rate for shipping"
+      - name: valid_from
+        description: "This record is valid since this datetime."
+      - name: valid_to
+        description: "This record is valid until this datetime."
+      - name: last_updated_at
+        description: "Timestamp of the last update to this record."

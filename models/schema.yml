@@ -4,13 +4,36 @@ sources:
   - name: humanresources
     schema: humanresources
     tables:
-     - name: employee
-     - name: department
-     - name: shift
+      - name: employee
+      - name: department
+      - name: shift
   - name: person
     schema: person
     tables:
       - name: person
+      - name: businessentityaddress
+      - name: address
+      - name: stateprovince
+      - name: emailaddress
+      - name: personphone
+      
+  - name: production
+    schema: production
+    tables:
+      - name: product
+      - name: productsubcategory
+      - name: productcategory
+  
+  - name: purchasing
+    schema: purchasing
+    tables:
+      - name: vendor
+      - name: shipmethod
+      - name: purchaseorderdetail
+      - name: purchaseorderheader
+
+
+
 
 models:
   - name: stg_employee
@@ -20,3 +43,60 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: stg_product
+    columns:
+      - name: product_id
+        description: "A unique identifier for the product"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_vendoraddress
+    columns:
+      - name: vendor_id
+        description: "A unique identifier for the vendor"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_vendorcontact
+    columns:
+      - name: vendor_id
+        description: "A unique identifier for the vendor"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_vendor
+    columns:
+      - name: vendor_id
+        description: "A unique identifier for the vendor"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_shipping
+    columns:
+      - name: ship_method_id
+        description: "A unique identifier for the shipping"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_purchaseorderdetail
+    columns:
+      - name: purchase_order_detail_id
+        description: "A unique identifier for the purchase order detail"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_purchaseorderheader
+    columns:
+      - name:  purchase_order_id
+        description: "A unique identifier for the purchase order header"
+        tests:
+          - unique
+          - not_null
+              
